@@ -92,14 +92,6 @@ function scrollRight() {
   });
 }
 
-
-
-
-
-
-
-
-
 // =================== ScrollReveal Animations ===================
 if (typeof ScrollReveal !== "undefined") {
   const sr = ScrollReveal({
@@ -125,3 +117,37 @@ if (typeof ScrollReveal !== "undefined") {
 } else {
   console.warn("ScrollReveal is not defined. Ensure it is properly imported.")
 }
+
+// =================== Animated Auto-Changing Title ===================
+const roleText = document.querySelector(".typed-text");
+const words = ["Frontend Developer", "Web Designer", "MERN Stack Developer"];
+let wordIndex = 0;
+let letterIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  const currentWord = words[wordIndex];
+  const currentLetters = currentWord.substring(0, letterIndex);
+  roleText.textContent = currentLetters;
+
+  if (!isDeleting && letterIndex < currentWord.length) {
+    letterIndex++;
+    setTimeout(typeEffect, 100);
+  } else if (isDeleting && letterIndex > 0) {
+    letterIndex--;
+    setTimeout(typeEffect, 50);
+  } else {
+    if (!isDeleting) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1200); // pause before deleting
+    } else {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(typeEffect, 200);
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (roleText) typeEffect();
+});

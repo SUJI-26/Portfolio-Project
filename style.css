@@ -364,6 +364,10 @@ textarea {
   margin-bottom: 0.5rem;
 }
 
+.home-content h1 {
+  font-size: var(--h1-font-size);
+}
+
 .home-content h3 {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
@@ -407,15 +411,24 @@ textarea {
   transform: translateY(-5px);
 }
 
+:root {
+  --primary-color: #7b4fff; /* your purple */
+  --shadow-glow: rgba(123, 79, 255, 0.5);
+}
+
 .home-image {
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .img-box {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .img-box img {
@@ -427,20 +440,57 @@ textarea {
   position: relative;
   top: -15px;
   left: 15px;
-
+  box-shadow: 0 10px 25px var(--shadow-glow);
+  transition: transform 0.4s ease;
 }
 
+.img-box:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.img-box:hover img {
+  transform: scale(1.05);
+}
+
+/* Background circle with animated gradient */
 .img-box::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: var(--primary-color);
+  background: linear-gradient(135deg, #7b4fff, #4facfe, #00f2fe);
+  background-size: 300% 300%;
+  animation: gradient-rotate 6s ease infinite;
   top: -1rem;
   right: -1rem;
   z-index: -1;
+  filter: blur(10px);
 }
+
+/* Smooth floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Gradient animation */
+@keyframes gradient-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 .scroll-down {
   position: absolute;
@@ -1183,4 +1233,15 @@ textarea {
   .skill-item{
     flex: 1 1 100%;
   }
+}
+.cursor {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: bold;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
