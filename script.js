@@ -120,7 +120,7 @@ if (typeof ScrollReveal !== "undefined") {
 
 // =================== Animated Auto-Changing Title ===================
 const roleText = document.querySelector(".typed-text");
-const words = ["Frontend Developer", "Web Designer", "MERN Stack Developer"];
+const words = ["Frontend Developer", "Web Developer", "Web Designer"];
 let wordIndex = 0;
 let letterIndex = 0;
 let isDeleting = false;
