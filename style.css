@@ -470,7 +470,8 @@ textarea {
 
 /* Smooth floating animation */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -490,7 +491,6 @@ textarea {
     background-position: 0% 50%;
   }
 }
-
 
 .scroll-down {
   position: absolute;
@@ -614,7 +614,6 @@ textarea {
   font-weight: var(--font-medium);
 }
 
-
 .skills-columns {
   display: flex;
   gap: 2rem;
@@ -681,9 +680,6 @@ textarea {
 .skill-progress.powerbi {
   width: 70%;
 }
-
-
-
 
 .education {
   display: flex;
@@ -854,14 +850,14 @@ textarea {
   justify-content: center;
   gap: 1rem;
 }
-.project-links a i{
+.project-links a i {
   padding-right: 10px;
 }
-.project-links a:hover{
- background: var(--primary-color-hover);
- padding: 10px;
- border-radius: 4px;
- color:white;
+.project-links a:hover {
+  background: var(--primary-color-hover);
+  padding: 10px;
+  border-radius: 4px;
+  color: white;
 }
 
 .project-btn {
@@ -1128,7 +1124,7 @@ textarea {
     top: 1rem;
     right: 1rem;
   }
-  .about-content{
+  .about-content {
     font-size: 22px;
   }
 
@@ -1136,10 +1132,10 @@ textarea {
     width: 280px;
     height: 280px;
   }
-.footer{
-  width: 100%;
-  background: #b5b4b4;
-}
+  .footer {
+    width: 100%;
+    background: #b5b4b4;
+  }
   .footer-wrapper {
     flex-direction: column;
     text-align: center;
@@ -1180,13 +1176,13 @@ textarea {
   .about-img::after {
     display: none;
   }
-.about-content{
-  font-size: 15px;
-}
+  .about-content {
+    font-size: 15px;
+  }
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  .contact-info{
+  .contact-info {
     margin-left: 30px;
   }
 }
@@ -1218,19 +1214,19 @@ textarea {
 @media (max-width: 768px) {
   .education {
     flex-direction: column;
-    gap:0px;
+    gap: 0px;
   }
 
   .education-item {
     flex: 1 1 100%;
   }
-  .skills-columns{
-    flex-direction: column; 
+  .skills-columns {
+    flex-direction: column;
   }
-  .skills-column{
+  .skills-column {
     margin-bottom: -35px;
   }
-  .skill-item{
+  .skill-item {
     flex: 1 1 100%;
   }
 }
@@ -1242,11 +1238,14 @@ textarea {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
-
-
 
 /* ==== FINAL RESPONSIVE FIXES (ONLY) ==== */
 
@@ -1359,5 +1358,100 @@ textarea {
 
   .scroll-down {
     display: none;
+  }
+}
+
+.menu-btn i {
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu-btn i:hover {
+  color: #6a59d1;
+}
+
+/* Optional for dark theme if you use theme toggling */
+.dark-theme .menu-btn i {
+  color: #ffffff;
+}
+
+/* ==================== Mobile Menu Icon Fix ==================== */
+.menu-btn {
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 1000;
+}
+
+.menu-btn i {
+  color: #ffffff !important;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.menu-btn:hover i {
+  color: #6a59d1;
+}
+
+.dark-theme .menu-btn i {
+  color: #ffffff !important;
+}
+
+/* ==================== FIX FOR MENU & THEME BUTTON VISIBILITY ==================== */
+.menu-btn,
+.theme-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.menu-btn i,
+.theme-btn i {
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Make sure both icons are fully visible and responsive */
+@media (max-width: 768px) {
+  .menu-btn {
+    right: 20px;
+    top: 20px;
+  }
+
+  .theme-btn {
+    right: 70px; /* shift left so both buttons show */
+    top: 20px;
+  }
+}
+
+/* ==================== Fix for 3-dot (menu-btn) ==================== */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-btn i {
+  font-size: 24px;
+  color: #fff; /* Make sure it's visible in dark mode */
+  cursor: pointer;
+}
+
+/* Responsive adjustment if needed */
+@media (max-width: 768px) {
+  .menu-btn {
+    right: 20px;
+    top: 20px;
   }
 }
