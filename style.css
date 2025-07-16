@@ -1455,3 +1455,17 @@ textarea {
     top: 20px;
   }
 }
+
+@media (max-width: 768px) {
+  .home-image .img-box {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+  }
+
+  .home-image .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
