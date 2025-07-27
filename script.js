@@ -151,3 +151,6 @@ function typeEffect() {
 document.addEventListener("DOMContentLoaded", () => {
   if (roleText) typeEffect();
 });
+
+
+

@@ -1469,3 +1469,33 @@ textarea {
     object-fit: cover;
   }
 }
+
+.social-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  background-color: #fff; /* white background */
+  border-radius: 50%; /* circular */
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Icon size and brand color */
+.social-icon i {
+  font-size: 20px;
+}
+
+/* Brand colors for icons */
+.social-icon[href*="instagram"] i { color: #E4405F; }
+.social-icon[href*="linkedin"] i { color: #0077B5; }
+.social-icon[href^="mailto:"] i   { color: #e00606cd; }
+.social-icon[href*="github"] i   { color: #171515; }
+
+/* Hover effect */
+.social-icon:hover {
+  transform: scale(1.1);
+  background-color: #e6e6e6; /* subtle hover bg */
+}
+
