@@ -5,7 +5,7 @@ It showcases my journey as an aspiring Full Stack Developer, featuring modern de
 
 🚀 Live Demo
 
-🔗 vsuji.netlify.app
+🔗 https://vsuji.netlify.app/
 
 Visit my live personal portfolio website deployed on Netlify.
 
